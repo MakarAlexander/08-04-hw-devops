@@ -37,6 +37,29 @@
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
+#### Решение
+
+Инфраструктура создается с помощью terraform с модулями, в результате динамически формируется inventory prod.yml по шаблону inventory.tftpl.  
+Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ
+
+[Роль для Vector](https://github.com/MakarAlexander/ansible_role_vector.git)  
+[Роль для Lighthouse](https://github.com/MakarAlexander/ansible_role_vector.git), зависимость роли с официальной ролью ```nginxinc.nginx```
+
+Создал файл requirements.yml, где описал инсталляцию ролей, привязку версии + проверка установленных зависимостей
+![1-1](./1.png)
+
+Для play "Install Lighthouse" добавил pre_tasks с установкой git
+
+![1-2](./2.png)
+
+Повторный запуск для проверки идемпотентности
+
+![1-3](./3.png)
+
+Доступ к Lighthouse и коннект к Clickhouse:
+
+![1-4](./4.png)
+
 ---
 
 ### Как оформить решение задания
