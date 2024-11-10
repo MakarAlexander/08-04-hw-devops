@@ -43,7 +43,7 @@
 Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ
 
 [Роль для Vector](https://github.com/MakarAlexander/ansible_role_vector.git)  
-[Роль для Lighthouse](https://github.com/MakarAlexander/ansible_role_vector.git), зависимость роли с официальной ролью ```nginxinc.nginx```
+[Роль для Lighthouse](https://github.com/MakarAlexander/ansible_role_lighthouse.git), зависимость роли с официальной ролью ```nginxinc.nginx```
 
 Создал файл requirements.yml, где описал инсталляцию ролей, привязку версии + проверка установленных зависимостей
 ![1-1](./1.png)
